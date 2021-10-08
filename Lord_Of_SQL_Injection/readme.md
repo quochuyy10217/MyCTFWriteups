@@ -24,10 +24,10 @@ Source code of this chall:
 	?>	
 ```
 
-In this chall, your object is to find the password because i already used many commnand like `' or 1=1 -- ;` and get no response :( . After many times trying, i try Blind SQL Injection and get the thing i want. You will bruteforce to find every character of the password.
+In this chall, your object is to find the password because i already used many command like `' or 1=1 -- ;` and get no response :( . After many times trying, i try Blind SQL Injection and get the thing i want. You will bruteforce to find every character of the password.
 
 
-You can devide this chall into 2 phase:
+I divide this chall into 2 phase:
 1. Find the length of the password
 2. Find every character of the password
 
@@ -45,7 +45,7 @@ This is my code to solve this problem:
 	    payload = "' or id='admin' and length(pw)=" + str(i) + " -- ;"
 	    payload = requests.utils.quote(payload)
 	    final_url = url + payload
-	    res = requests.get(final_url,cookies=my_cookies)
+	    res = requests.get(final_url,cookies=my_cookies)s
 	    if "Hello admin" in res.text:
 		print("FOUND! Password length is " + str(i))
 		print("-------------------------------------------------")
@@ -73,7 +73,7 @@ This is my code to solve this problem:
 
 The two library which i used in this code is requests library and string library. The requests library is used to send data to the server, and the string library to get all the digit and lowercase letter as string for the second loop. Maybe you don't understand why i didn't use the uppercase letter or why the range of the first loop is 0->10, that's a secret :) You will know that secret after you solved this chall :D
 
-In the first for loop, i find the password length. After that, i use the password's length i had found before as an end of range for the second for loop. And also, in this chall you must use you cookies to pass into the header of the request you make. If you didn't do that, this code will fall because the server will redirect you to the login page :<
+In the first for loop, i find the password length. After that, i use the password's length i had found before as an end of range for the second for loop. And also, in this chall you must use you cookies to pass into the header of the request you make. If you don't do that, this code will fall because the server will redirect you to the login page :<
 
 I will explain two payload i used in this chall:
 
@@ -93,4 +93,4 @@ I find the password by using a single quote to end the query which already open 
 
 In the second loop, i find every character of the password using bruteforce again. The substr() function will extract a substring from a string, in this case is the passwd. You can read about the substr() function on the internet to know more about how it work. 
 
-And after two loop, you can find the password is 095a9852
+And after the second loop, you can find the password is 095a9852
