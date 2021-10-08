@@ -21,9 +21,8 @@ Source code of this chall:
 	  $result = @mysql_fetch_array(mysql_query($query)); 
 	  if(($result['pw']) && ($result['pw'] == $_GET['pw'])) solve("orc"); 
 	  highlight_file(__FILE__); 
-	?>
-	
-```php
+	?>	
+```
 
 In this chall, your object is to find the password because i already used many commnand like `' or 1=1 -- ;` and get no response :( . After many times trying, i try Blind SQL Injection and get the thing i want. You will bruteforce to find every character of the password.
 
