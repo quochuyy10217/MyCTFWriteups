@@ -12,7 +12,7 @@ When I read what they write in the page, I didn't understand at first. But fortu
 
 ![wuGit3](https://user-images.githubusercontent.com/67006728/136659412-8fd418f6-a520-4fdf-b631-de37646e1e0a.PNG)
 
-But they told me that I don't have permission to see this. But there is many tools can let me gain the permission to the "./git" page. And the one i chose is [GitHacker](https://github.com/WangYihang/GitHacker). With this tool, you can download everything in the "./git" page.
+But they told me that I don't have permission to see this. But there are many tools can let me gain the permission to the "./git" page. And the one I chose is [GitHacker](https://github.com/WangYihang/GitHacker). With this tool, you can download everything in the "./git" page.
 
 ![wuGit4](https://user-images.githubusercontent.com/67006728/136659417-a84c2df2-7809-47b5-bb20-ea766a40cbee.PNG)
 
