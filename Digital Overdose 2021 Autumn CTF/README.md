@@ -1,5 +1,27 @@
 ## Digital Overdose 2021 Autumn CTF
 
+#### notrequired
+
+When you open an instance of this chall, you will see a page like this
+
+![wuLFI1](https://user-images.githubusercontent.com/67006728/136723727-9d22946e-eaef-4c13-bb03-bdccd844f2e2.PNG)
+
+Now look carefully at the url of this chall, you will see that the url is like `/index.php?page=index.html`. This is an evidance show that this page may be suffer from LFI. If you don't know what LFI is, please read [this](https://book.hacktricks.xyz/pentesting-web/file-inclusion). You should learn about PHP wrapper as well because we will use it to solve this chall.
+
+To check if the page is suffer from LFI or not, I will use the PHP wrapper to check: I change the url to `/index.php?page=php://filter/convert.base64-encode/resource=index.html`. And the result is
+
+![wuLFI2](https://user-images.githubusercontent.com/67006728/136723735-981ab250-15a9-4d23-8065-e1e34473c864.PNG)
+
+When I use the PHP wrapper, the content of the page is convert to base64. This method will be useful when you want to read the PHP code of the page.After that I use base64 decoder to see what is the source code of the page
+
+![wuLFI3](https://user-images.githubusercontent.com/67006728/136723742-02b33246-085a-4fda-95ff-778534ac811a.PNG)
+
+As you can see in the image above, the source code has a comment that remind the developer himself to delete /bin/secrets.txt. So we will go to that page to check if it is deleted or not.
+
+![wuLFI4](https://user-images.githubusercontent.com/67006728/136723746-75d2dfe5-b3b4-45c1-b449-cfeb63e30f74.PNG)
+
+And boom! We get the flag~
+
 #### git commit -m "whatever"
 
 ![wuGit1](https://user-images.githubusercontent.com/67006728/136659402-0623a624-e2b1-4ae1-98f7-393b9479e2cc.PNG)
