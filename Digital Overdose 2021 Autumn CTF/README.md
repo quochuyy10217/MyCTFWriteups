@@ -1,6 +1,6 @@
 ## Digital Overdose 2021 Autumn CTF
 
-#### notrequired
+### notrequired
 
 When you open an instance of this chall, you will see a page like this
 
@@ -22,7 +22,7 @@ As you can see in the image above, the source code has a comment that remind the
 
 And boom! We get the flag~
 
-#### git commit -m "whatever"
+### git commit -m "whatever"
 
 ![wuGit1](https://user-images.githubusercontent.com/67006728/136659402-0623a624-e2b1-4ae1-98f7-393b9479e2cc.PNG)
 
