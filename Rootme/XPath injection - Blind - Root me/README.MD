@@ -26,6 +26,8 @@ Seeing that the single quote and double quotes is filter. Now I'm stuck @@ But a
 
 ![anh5](https://live.staticflickr.com/65535/51835179713_684d757151_z.jpg)
 
+You can extract any character in the above table with the substring function. The XML of this table has four tag (i think so :D), which is `<username>` for the Username row, `<email>` for Email row, `<account>` for Account Type row and a hidden tag `<password>` for Password. Example is using `a = substring(//user[userid=2]/account,1,1)` to get the character *a*, because the account type of user who has userid=2 is administrator, and the first character of this string is *a*.
+
 This is my code to exploit this challenge:
 
 ```python
