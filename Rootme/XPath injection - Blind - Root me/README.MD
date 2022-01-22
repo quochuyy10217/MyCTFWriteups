@@ -8,15 +8,23 @@ Firstly, the injection point is at the Members section.
 
 when you access this section and click on any member in the table, the url will look like this: *http://challenge01.root-me.org/web-serveur/ch24/?action=user&userid=2*
 
-The injection point is the `userid` parameter. You can check by enter `or` operator (|), an error will occur. We can use this to check if our conditional expression is true or not and achive our goal. If our exploit code is true, the page will not display any error. If not, we will see the error sceen. We will use this to blind Xpath Injection
+The injection point is the `userid` parameter. You can check by enter `or` operator (|), an error will occur. We can use this to check if our conditional expression is true or not and achive our goal. If our exploit code is true, the page will not display any error. If not, we will see the error sceen. We will use this to blind Xpath Injection.
+
+![anh2](https://live.staticflickr.com/65535/51835798225_fe1581a2c1_b.jpg)
 
 And now we know where should we exploit. I will use it to check for John's password length because he is administrator. 
 
 After check his password length with my exploit code (I will show it at the end of this writeup), i see that John's password length is 14. But after brute-force John's password, its length is actually 13 and I don't know why @@
 
+![anh3](https://live.staticflickr.com/65535/51835061596_f68fa3113c_b.jpg)
+
 And now we know that the password length is 13, we can bruteforce the password. But when you use the substring function with single quote or double quote, you will see that they are filter.
 
+![anh4](https://live.staticflickr.com/65535/51835179303_59abc5e856_b.jpg)
+
 Seeing that the single quote and double quotes is filter. Now I'm stuck @@ But after searching about it on Google, I see a way to bypass this filter. You can use substring function and extract many character from the table in Members section, although it's not enough character compare with the alphabet, but it's useful for this challenge.
+
+![anh5](https://live.staticflickr.com/65535/51835179713_684d757151_z.jpg)
 
 This is my code to exploit this challenge:
 
@@ -91,3 +99,7 @@ print("Password of admin is: " + pw)
 #password is ueiJ4a65@1.oS
 
 ```
+
+![anh6](https://live.staticflickr.com/65535/51835417724_bc56e60ceb_z.jpg)
+
+Thank for [this page](https://ngaa.tistory.com/18?fbclid=IwAR39JEuheQ2dfykxE61GqKVjX0HN2Uf6DP0KmApusQZE6orURoNcfJPfRoc) and this [Github author](https://github.com/NhatNam-Kyoto/Rootme-Solution/blob/master/Xpath-blind.py?fbclid=IwAR1GcvyiiGSaJJNiU5NKJR7jz4sIZGdnsGyBgqBJ10EHInNq4QlYEUEvdwI), I am able to bruteforce the password and solve this problem.
