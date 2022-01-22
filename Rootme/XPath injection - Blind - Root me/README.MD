@@ -4,7 +4,7 @@ Based on the Challenge Name, you can see that we will use Blind XPath Injection 
 
 Firstly, the injection point is at the Members section.
 
-![anh1](https://flic.kr/p/2mYpp6W)
+![anh1](https://live.staticflickr.com/65535/51834116972_b840cea7e2_z.jpg)
 
 when you access this section and click on any member in the table, the url will look like this: *http://challenge01.root-me.org/web-serveur/ch24/?action=user&userid=2*
 
