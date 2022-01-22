@@ -1,4 +1,4 @@
-#XPath injection - Blind
+# XPath injection - Blind
 
 Based on the Challenge Name, you can see that we will use Blind XPath Injection to solve this problem. You can read more about Blind XPath Injection [here](https://owasp.org/www-community/attacks/Blind_XPath_Injection)
 
@@ -18,7 +18,7 @@ After check his password length with my exploit code (I will show it at the end 
 
 ![anh3](https://live.staticflickr.com/65535/51835061596_f68fa3113c_b.jpg)
 
-And now we know that the password length is 13, we can bruteforce the password. But when you use the substring function with single quote or double quote, you will see that they are filter.
+And now we know that the password length is 13, we can bruteforce the password. But when you use the substring function with *single quote* or *double quotes*, you will see that they are filter.
 
 ![anh4](https://live.staticflickr.com/65535/51835179303_59abc5e856_b.jpg)
 
