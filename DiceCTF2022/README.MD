@@ -6,8 +6,7 @@ Source code:
 
 index.js
 
-```nodejs
-
+```javascript
 const crypto = require('crypto');
 
 class Database {
@@ -72,6 +71,7 @@ app.listen(3000, () => {
 });
 
 ```
+Dockerfile
 
 ```docker
 FROM node:17.4.0-buster-slim
@@ -95,7 +95,7 @@ According to the source code above, we know that after we post some thing, the w
 
 Take a look at this code:
 
-```nodejs
+```javascript
 
 const db = new Database();
 db.createNote({ data: process.env.FLAG });
@@ -105,7 +105,7 @@ As you can see, when the website create a new instance of Database class, it cre
 
 If you don't read the source code carefully, you won't know how to solve this challenge. Please look carefully at this code
 
-```nodejs
+```javascript
 
 this.notes = [];
 this.secret = `secret-${crypto.randomUUID}`;
