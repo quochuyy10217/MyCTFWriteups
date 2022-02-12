@@ -8,7 +8,7 @@ There is no clue about what to do, so I looked at the HTTP request to check if t
 
 ![anh2](https://live.staticflickr.com/65535/51876764283_f44e9900ac_z.jpg)
 
-The cookie session they set maybe injectable because when you decode the first part of the cookie before the first dot using base64 decode, you can see that it has the string `{'logged_in': False}`. When I saw it, I tried to change it value to `True`, then encoded it without making any change at the other part of the cookie, but it failed. So I looked for a tool to decode this cookie, and I found the tool named [Flask Unsign](https://pypi.org/project/flask-unsign/). This tool can be used to decode Flask cookie, brute-force and craft session cookies of Flask.
+The cookie session they set maybe injectable because when you decode the first part of the cookie before the first dot using base64 decode, you can see that it has the string `{'logged_in': False}`. When I saw it, I tried to change it value to `True`, then encoded it without making any change to the other part of the cookie, but it failed. So I looked for a tool to decode this cookie, and I found the tool named [Flask Unsign](https://pypi.org/project/flask-unsign/). This tool can be used to decode Flask cookie, brute-force and craft session cookies of Flask.
 
 Then I used Flask Unsign to decode the cookie
 
