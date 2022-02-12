@@ -1,4 +1,4 @@
-## web-intro
+## Web-intro
 
 Accessed the chall, this is what I saw
 
@@ -16,14 +16,14 @@ Then I used Flask Unsign to decode the cookie
 
 Brute-force its secret
 
-[!anh4](https://live.staticflickr.com/65535/51877330140_933bd90fb9_z.jpg)
+![anh4](https://live.staticflickr.com/65535/51877330140_933bd90fb9_z.jpg)
 
 Finally, Signed a new cookie with the secret
 
-[!anh5](https://live.staticflickr.com/65535/51877330135_78a3d793eb_z.jpg)
+![anh5](https://live.staticflickr.com/65535/51877330135_78a3d793eb_z.jpg)
 
 Sent request to server and obtain the flag
 
-[!anh6](https://live.staticflickr.com/65535/51876764248_81a48cb4f7_z.jpg)
+![anh6](https://live.staticflickr.com/65535/51876764248_81a48cb4f7_z.jpg)
 
 Flag is: `CTF{66bf8ba5c3ee2bd230f5cc2de57c1f09f471de8833eae3ff7566da21eb141eb7}`
