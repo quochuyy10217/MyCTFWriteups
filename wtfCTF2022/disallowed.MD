@@ -30,11 +30,11 @@ Open the source of this challenge
 <!--Do you know what robots.txt is?-->
 ```
 
-You can see the hint say that `Do you know what robots.txt is?`. So I access /robots.txt (You can read about robots.txt [here](https://www.cloudflare.com/learning/bots/what-is-robots.txt/))
+You can see the hint say that `Do you know what robots.txt is?`. So I access `https://madewithlaziness.herokuapp.com/robots.txt` (You can read about robots.txt [here](https://www.cloudflare.com/learning/bots/what-is-robots.txt/))
 
 ![anh2](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/wtfCTF2022/img_src/disallowed_2.PNG)
 
-The page disallowed access to 007.html. As a hacker, we must know what this page is hiding :D
+The page disallowed access to `https://madewithlaziness.herokuapp.com/007.html`. As a hacker, we must know what this page is hiding :D
 
 ![anh3](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/wtfCTF2022/img_src/disallowed_3.PNG)
 
