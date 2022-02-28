@@ -1,6 +1,6 @@
 ## Disallowed
 
-![anh1]()
+![anh1](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/wtfCTF2022/img_src/disallowed_1.PNG)
 
 Open the source of this challenge
 
@@ -32,11 +32,11 @@ Open the source of this challenge
 
 You can see the hint say that `Do you know what robots.txt is?`. So I access /robots.txt (You can read about robots.txt in Google)
 
-![anh2]()
+![anh2](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/wtfCTF2022/img_src/disallowed_2.PNG)
 
 The page disallowed access to 007.html. As a hacker, we must know what this page is hiding :D
 
-![anh3]()
+![anh3](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/wtfCTF2022/img_src/disallowed_3.PNG)
 
 View the source of 007.html and obtain the flag
 
