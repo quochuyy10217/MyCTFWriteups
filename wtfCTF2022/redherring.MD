@@ -100,7 +100,7 @@ This page let you know the hashed flag. Use `view source` to open the page sourc
     </script>
 ```
 
-As you can see from the code above, we have many functions but what we must focus is the `hashFlag` function. It get the flag from `http://localhost:3003/hash` and hash it to the number we saw at the index page. Maybe you will think that we must debug the function from the start to get the flag but nope, we just open `http://localhost:3003/hash` and will get the flag.
+As you can see from the code above, we have many functions but what we must focus is the `hashFlag` function. It get the flag from `http://localhost:3003/hash` and hash it to the number we saw at the index page. Maybe you will think that we must debug the function from the start to get the flag but nope, we just open `http://localhost:3003/hash` and get the flag.
 
 ![anh3](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/wtfCTF2022/img_src/redherring_flag.PNG)
 
