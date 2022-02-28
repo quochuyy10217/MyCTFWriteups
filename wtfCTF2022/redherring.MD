@@ -1,6 +1,6 @@
 ## redherring wtfCTF
 
-This challenge give us a link to github page. We must clone it and deploy the challenge using Docker. The source is [here](https://github.com/madjelly/redherringwtfCTF)
+This challenge give us a link to github page. We must clone it and deploy the challenge using Docker. The source is [here](https://github.com/madjelly/redherringwtfCTF).
 After cloning the source, you will have Dockerfile, source code folder and a file call `docker-compose.yml`. Just deploy the challenge using `docker-compose up`
 
 ![anh1](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/wtfCTF2022/img_src/redherring_1.PNG)
