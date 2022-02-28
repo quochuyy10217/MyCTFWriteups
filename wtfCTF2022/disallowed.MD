@@ -30,7 +30,7 @@ Open the source of this challenge
 <!--Do you know what robots.txt is?-->
 ```
 
-You can see the hint say that `Do you know what robots.txt is?`. So I access /robots.txt (You can read about robots.txt in Google)
+You can see the hint say that `Do you know what robots.txt is?`. So I access /robots.txt (You can read about robots.txt [here](https://www.cloudflare.com/learning/bots/what-is-robots.txt/))
 
 ![anh2](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/wtfCTF2022/img_src/disallowed_2.PNG)
 
