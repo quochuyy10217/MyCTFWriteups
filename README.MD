@@ -8,6 +8,6 @@ This is my CTF writeup of many events I participated in
 
 4. [Lord of SQL Injection](https://github.com/quochuyy10217/MyCTFWriteups/tree/main/Lord_Of_SQL_Injection)
 
-5. [Rootme](https://github.com/quochuyy10217/MyCTFWriteups/tree/main/Rootme/)
+5. [Rootme](https://github.com/quochuyy10217/MyCTFWriteups/tree/main/rootme/)
 
 6. [wtfCTF2022](https://github.com/quochuyy10217/MyCTFWriteups/tree/main/wtfCTF2022)

@@ -10,7 +10,7 @@ Take a look at the HTTP request which we sent to the server, you will see that t
 
 So we know that the url is injectable, it's yaml deserialization attack. Please read [this document](https://www.exploit-db.com/docs/english/47655-yaml-deserialization-attack-in-python.pdf?utm_source=dlvr.it&utm_medium=twitter) to understand what yaml deserialization is. From the document, we know that this attack can lead to RCE and we can leverage that RCE to steal the admin password.
 
-Why do we have to use RCE when we can just exploit it directly? Because when you execuse the command with `subprocess`, you will get a line like `<subprocess.Popen object at 0x7fa4b29509a0>` first, follow after that is the result of you command. But the challenge is only return a first line when you executed the code, so we must find another way.
+Why do we have to use RCE when we can just exploit it directly? Because when you execuse the command with `subprocess`, you will get a line like `<subprocess.Popen object at 0x7fa4b29509a0>` first, follow after that is the result of your command. But the challenge is only return a first line when you executed the code, so we must find another way.
 
 ![anh3](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/YamlDe_3.PNG)
 
