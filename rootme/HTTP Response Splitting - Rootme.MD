@@ -24,7 +24,7 @@ Mình viết thêm đoạn payload như sau:
 
 ```
 
-Ở đây, dòng Content-Length đầu tiên mình gán giá trị bằng 0, tức là inject vào gói response của server để kết thúc response thứ nhất. Sau đó mình viết thêm response thứ 2 cùng đoạn script để thực hiện XSS, gửi dữ liệu về 1 trang web thứ 3 và mình sẽ chờ ở đó để lấy dữ liệu. Last-modified mình set thành 1 giá trị khá lớn để tránh việc cập nhật lại cache của proxy, làm cho việc inject không thành công.
+Ở đây, dòng Content-Length đầu tiên mình gán giá trị bằng 0, tức là inject vào gói response của server để kết thúc response thứ nhất. Sau đó mình viết thêm response thứ 2 cùng đoạn script để thực hiện XSS, gửi dữ liệu về 1 trang web thứ 3 và mình sẽ chờ ở đó để lấy dữ liệu. Last-modified mình set thành 1 giá trị khá lớn để tránh việc cập nhật lại cache của proxy, làm cho việc inject không thành công. Sau đó thực hiện encode url cho payload và gửi cho server.
 
 ![anh3](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_3.png)
 
