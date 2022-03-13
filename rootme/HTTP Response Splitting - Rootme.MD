@@ -6,11 +6,11 @@ Khi mở trang web lên thì mình nhận được yêu cầu phải chọn ngô
 
 ![anh1](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_1.png)
 
-Thông qua việc tìm hiểu các tài liệu về HTTP Response Splitting, mình biết rằng mình có thể kiểm tra xem trang web có thể bị inject không  bằng việc sử dụng CLRF injection (sử dụng các kí tự \r\n để tạo xuống dòng trong request). mình đã thử sử dụng và thêm vào 1 trường test=true. Sau khi kiểm tra response thì mình thấy dưới trường Set-Cookie của response có thêm trường test=true, tức là mình có thể thực hiện inject được.
+Thông qua việc tìm hiểu các tài liệu về HTTP Response Splitting, mình biết rằng mình có thể kiểm tra xem trang web có thể bị inject không  bằng việc sử dụng CLRF injection (sử dụng các kí tự \r\n để tạo xuống dòng trong request). Mình đã thử sử dụng và thêm vào 1 trường test=true. Sau khi kiểm tra response thì mình thấy dưới trường Set-Cookie của response có thêm trường test=true, tức là mình có thể thực hiện inject được.
 
 ![anh2](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_2.PNG)
 
-mình viết thêm đoạn payload như sau:
+Mình viết thêm đoạn payload như sau:
 
 ```
 \r\nContent-Length: 0
@@ -28,7 +28,7 @@ mình viết thêm đoạn payload như sau:
 
 ![anh3](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_3.png)
 
-mình gửi request và thấy rằng mình đã tạo được 2 response thành công. Tuy nhiên nếu chú ý kĩ thì ở phần response của server trả về có trường Location.
+Gửi request và thấy rằng mình đã tạo được 2 response thành công. Tuy nhiên nếu chú ý kĩ thì ở phần response của server trả về có trường Location.
 
 ![anh4](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_4.png)
 
@@ -46,6 +46,6 @@ Chạy chương trình và đợi 1 khoảng thời gian sau đó để admin gh
 
 ![anh6](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_6.png)
 
-Đem admin session vừa lấy được đem submit và mình đã giải được bài này.
+Đem admin session vừa lấy được đem submit và giải được bài này.
 
 ![anh7](https://github.com/quochuyy10217/MyCTFWriteups/blob/main/rootme/img_src/HTTPRessplit_7.png)
