@@ -23,7 +23,7 @@ The `()` is filtered, so I used `document.location` to XSS, and It's success! Th
 
 ```
 
-Wait for a short time and the flag is arrived :D
+Enter the payload, then grab the url and send it to admin using Contact feature. Wait for a short time and the flag is arrived :D
 
 ![anh4](https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/XSS_DOM_Based_Eval4.png)
 
