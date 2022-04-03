@@ -87,10 +87,10 @@ setTimeout(() => {
 
 As you can see from the source code above, what it will do is send a POST request to `/api/sign-hmac` to get an unsigned Token, then use it to create a JWT. Just grab the code, add a `console.log()` command to print out JWT that return from the function and paste to the console of this challenge. Then run it.
 
-![anh5]()
+![anh6]()
 
 After that, change your cookie to the new JWT and you will get the flag.
 
-![anh6]()
+![anh7]()
 
 Ps: if you get the message like "token is expired", just change the value in `exp` field to another date time value in the future.
