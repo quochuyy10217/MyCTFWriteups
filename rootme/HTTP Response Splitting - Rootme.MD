@@ -11,7 +11,7 @@ Khi mở trang web lên thì mình nhận được yêu cầu phải chọn ngô
 Thông qua việc tìm hiểu các tài liệu về HTTP Response Splitting, mình biết rằng mình có thể kiểm tra xem trang web có thể bị inject không  bằng việc sử dụng CLRF injection (sử dụng các kí tự `\r\n` để tạo xuống dòng trong request). Mình đã thử sử dụng và thêm vào 1 trường test=true. Sau khi kiểm tra response thì mình thấy dưới trường Set-Cookie của response có thêm trường test=true, tức là mình có thể thực hiện inject được.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_2.png" />
+  <img src="https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_2.PNG" />
 </p>
 
 Mình viết thêm đoạn payload như sau:
@@ -88,7 +88,7 @@ Chương trình mình viết bao gồm 2 function, 1 để poison cache của pr
 Chạy chương trình và đợi 1 khoảng thời gian sau đó để admin ghé thăm /admin thì mình nhận thấy việc inject đã thành công vì đã có 1 request gửi tới trang RequestBin chứa session của admin.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_5.png" />
+  <img src="https://raw.githubusercontent.com/quochuyy10217/MyCTFWriteups/main/rootme/img_src/HTTPRessplit_5.PNG" />
 </p>
 
 <p align="center">
